@@ -1,6 +1,5 @@
 <?php
 
-require_once('Controller.php');
 require_once(__DIR__ . '/../Model/Item.php');
 require_once(__DIR__ . '/../Model/Product.php');
 require_once(__DIR__ . '/../Model/ShoppingList.php');
@@ -57,5 +56,4 @@ class ItemController extends Controller
 
         return $this->list($this->request->shoppingList_id);
     }
-
 }

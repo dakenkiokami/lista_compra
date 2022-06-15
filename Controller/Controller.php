@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__.'/../Config/Request.php');
+require_once(__DIR__ . '/../Config/Request.php');
 
 class Controller
 {

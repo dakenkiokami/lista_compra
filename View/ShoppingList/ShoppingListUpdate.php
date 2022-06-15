@@ -9,41 +9,47 @@
                 <input type="date" name="shoppingList_date" id="shoppingList_date" value="<?php echo $shoppingList[0]->getShoppingListDate() ?>" required />
             </div>
 
-            <?php
-            if (count($shoppingList) > 1) {
-            ?>
-                <div>
-                    <h2>Itens</h2>
-                </div>
-                <table>
-                    <thead>
-                        <tr class="titulo">
-                            <th class="small">ID</th>
-                            <th class="medium">Nome</th>
-                            <th class="small">Qtde</th>
-                            <th class="none"><a href="?controller=ItemController&method=create&shoppingList_id=<?php echo $shoppingList[0]->getShoppingListId(); ?>">Adicionar Produto</a></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div>
+                <h2>Itens</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr class="titulo">
+                        <th class="small">ID</th>
+                        <th class="medium">Nome</th>
+                        <th class="small">Qtde</th>
+                        <th class="none"><a href="?controller=ItemController&method=create&shoppingList_id=<?php echo $shoppingList[0]->getShoppingListId(); ?>">Adicionar Produto</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+
                     <?php
-                }
-                for ($i = 1; $i < count($shoppingList); $i++) {
+                    if (count($shoppingList) > 1) {
+
+                        for ($i = 1; $i < count($shoppingList); $i++) {
                     ?>
+                            <tr>
+                                <td><?php echo $shoppingList[$i]->getItemID() ?></td>
+                                <td><?php echo $shoppingList[$i]->product_name ?></td>
+                                <td><input class="small" type="text" name="<?php echo $i ?>" id="<?php echo $i ?>" value="<?php echo $shoppingList[$i]->getItemQtd() ?>" required /></td>
+                                <td class="button"><a href="?controller=ItemController&method=delete&item_id=<?php echo $shoppingList[$i]->getItemID(); ?>&shoppingList_id=<?php echo $shoppingList[0]->getShoppingListId(); ?>">Excluir</a></td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
+                        ?>
                         <tr>
-                            <td><?php echo $shoppingList[$i]->getItemID() ?></td>
-                            <td><?php echo $shoppingList[$i]->product_name ?></td>
-                            <td><input class="small" type="text" name="<?php echo $i ?>" id="<?php echo $i ?>" value="<?php echo $shoppingList[$i]->getItemQtd() ?>" required /></td>
-                            <td class="button"><a href="?controller=ItemController&method=delete&item_id=<?php echo $shoppingList[$i]->getItemID(); ?>&shoppingList_id=<?php echo $shoppingList[0]->getShoppingListId(); ?>">Excluir</a></td>
+                            <td colspan="4">Nenhum produto adicionado à essa lista</td>
                         </tr>
                     <?php
-                }
+                    }
                     ?>
-                    </tbody>
-                </table>
-                <div>
-                    <input type="submit" value="Editar" />
-                    <input type="reset" value="Cancelar" />
-                </div>
+                </tbody>
+            </table>
+            <div>
+                <input type="submit" value="Editar" />
+                <input type="reset" value="Cancelar" />
+            </div>
         </div>
     </form>
 

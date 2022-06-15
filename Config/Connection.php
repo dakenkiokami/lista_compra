@@ -7,7 +7,6 @@ class Connection
 
     private function __construct()
     {
-        
     }
 
     public static function connect(): PDO
@@ -26,4 +25,3 @@ class Connection
         }
     }
 }
-?>

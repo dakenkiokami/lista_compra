@@ -43,14 +43,14 @@ class ShoppingList
         $this->shoppingList_date = $shoppingList_date;
     }
 
-    public function formatDate(){
+    public function formatDate()
+    {
 
         $date = $this->getShoppingListDate();
         $array = explode("-", $date);
         $date = $array[2] . "/" . $array[1] . "/" . $array[0];
 
         return $date;
-
     }
 
     public function saveList()

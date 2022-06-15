@@ -56,6 +56,18 @@ class ShoppingListController extends Controller
     public function delete($data)
     {
         $shoppingList_id = (int) $data['shoppingList_id'];
+        
+        $shoppingList = ShoppingList::selectById($shoppingList_id);
+        $shoppingList[0]->setShoppingListTitle($this->request->shoppingList_title);
+        $shoppingList[0]->setShoppingListDate($this->request->shoppingList_date);
+        $shoppingList[0]->saveList();
+
+        for ($i = 1; $i < count($shoppingList); $i++) {
+
+            $item = Item::selectById($shoppingList[$i]->getItemId());
+            $item->deleteItem($shoppingList[$i]->getItemId());
+        }
+
         $shoppingList = ShoppingList::deleteList($shoppingList_id);
 
         return $this->list();

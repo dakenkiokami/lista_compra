@@ -1,4 +1,4 @@
-<h1>Relatórios</h1>
+<h1>Relatório</h1>
 <div class="container">
     <form action="?controller=ReportController&method=report" method="post">
         <div>

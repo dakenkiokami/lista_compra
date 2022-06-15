@@ -25,13 +25,13 @@
                 <input type="number" name="item_qtd" id="item_qtd" required />
             </div>
             <div>
-                <input type="hidden" name="shoppingList_id" id="shoppingList_id" value="<?php echo($_REQUEST['shoppingList_id']); ?>"/>
+                <input type="hidden" name="shoppingList_id" id="shoppingList_id" value="<?php echo ($_REQUEST['shoppingList_id']); ?>" />
                 <input type="submit" value="Adicionar" />
                 <input type="reset" value="Limpar" />
             </div>
         </div>
     </form>
     <div>
-    <a href="?controller=ShoppingListController&method=list">Voltar</a>
+        <a href="?controller=ShoppingListController&method=list">Voltar</a>
     </div>
 </div>

@@ -1,13 +1,14 @@
 <?php
 
-require_once (__DIR__.'/Controller/ShoppingListController.php');
-require_once (__DIR__.'/Controller/ProductController.php');
-require_once (__DIR__.'/Controller/ItemController.php');
-require_once (__DIR__.'/Controller/ReportController.php');
+require_once(__DIR__ . '/Controller/ShoppingListController.php');
+require_once(__DIR__ . '/Controller/ProductController.php');
+require_once(__DIR__ . '/Controller/ItemController.php');
+require_once(__DIR__ . '/Controller/ReportController.php');
 
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
+
 <head>
     <meta charset="utf-8">
     <title>Teste Prático LXTec</title>
@@ -37,7 +38,6 @@ require_once (__DIR__.'/Controller/ReportController.php');
         echo '<div><a href="?controller=ShoppingListController&method=list">Listas</a></div>';
         echo '<div><a href="?controller=ProductController&method=list">Produtos</a></div>';
         echo '<div><a href="?controller=ReportController&method=create">Relatório por data</a></div>';
-
     }
     ?>
 

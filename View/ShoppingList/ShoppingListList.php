@@ -37,5 +37,5 @@
     </table>
 </div>
 <div>
-<a href="#" onclick="location.href='index.php'">Voltar</a>
+    <a href="#" onclick="location.href='index.php'">Voltar</a>
 </div>

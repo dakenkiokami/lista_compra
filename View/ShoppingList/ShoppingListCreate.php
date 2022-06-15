@@ -18,5 +18,5 @@
     </form>
 </div>
 <div>
-<a href="?controller=ShoppingListController&method=list">Voltar</a>
+    <a href="?controller=ShoppingListController&method=list">Voltar</a>
 </div>
